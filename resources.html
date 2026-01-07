@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bible study resources - PDF study guides, notes, and reference materials.">
+    <title>Resources - Scripture Source</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✝ Scripture Source</h1>
+            <p class="tagline">"Thy word is a lamp unto my feet, and a light unto my path" - Psalm 119:105</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#" onclick="toggleCart()" style="position: relative;">
+                    🛒 <span id="cartCount">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <div class="cart-empty" id="cartEmpty">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">Study Resources & Downloads</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Free PDF study guides, notes, and reference materials</p>
+
+        <div class="category-filter">
+            <button class="category-btn active" onclick="filterResources('all')">All Resources</button>
+            <button class="category-btn" onclick="filterResources('Study Guides')">Study Guides</button>
+            <button class="category-btn" onclick="filterResources('Notes')">Notes</button>
+            <button class="category-btn" onclick="filterResources('Charts')">Charts & Maps</button>
+        </div>
+
+        <div id="resourcesContainer">
+            <div class="resource-item" data-type="Study Guides">
+                <div class="resource-info">
+                    <h3>📘 Book of Romans Study Guide</h3>
+                    <p>12-week comprehensive study guide with questions and commentary • PDF, 45 pages</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+            <div class="resource-item" data-type="Notes">
+                <div class="resource-info">
+                    <h3>📝 Gospel of John Sermon Notes</h3>
+                    <p>Complete sermon note collection from our John series • PDF, 78 pages</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+            <div class="resource-item" data-type="Charts">
+                <div class="resource-info">
+                    <h3>🗺️ Bible Timeline Chart</h3>
+                    <p>Visual timeline from Genesis to Revelation with key events • PDF, Large Format</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+            <div class="resource-item" data-type="Study Guides">
+                <div class="resource-info">
+                    <h3>📕 Psalms Prayer Journal</h3>
+                    <p>30-day guided prayer journey through selected Psalms • PDF, 35 pages</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+            <div class="resource-item" data-type="Charts">
+                <div class="resource-info">
+                    <h3>📊 Old Testament Overview Chart</h3>
+                    <p>Visual guide to OT books, themes, and chronology • PDF, Printable</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+            <div class="resource-item" data-type="Notes">
+                <div class="resource-info">
+                    <h3>✍️ Inductive Bible Study Method</h3>
+                    <p>Learn how to study the Bible effectively with this practical guide • PDF, 22 pages</p>
+                </div>
+                <a href="#" class="btn">Download PDF</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Scripture Source. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Sharing God's Word through study and fellowship</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

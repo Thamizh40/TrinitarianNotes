@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your purchase - Download instructions and support.">
+    <title>Thank You - Scripture Source</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✝ Scripture Source</h1>
+            <p class="tagline">"Thy word is a lamp unto my feet, and a light unto my path" - Psalm 119:105</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#" onclick="toggleCart()" style="position: relative;">
+                    🛒 <span id="cartCount">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <div class="cart-empty" id="cartEmpty">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="hero" style="text-align: center; padding: 4rem 2rem;">
+            <div style="font-size: 5rem; margin-bottom: 1rem;">✅</div>
+            <h2 style="color: #27ae60; margin-bottom: 1rem;">Thank You for Your Purchase!</h2>
+            <p style="font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto 2rem;">Your payment has been successfully processed through Gumroad.</p>
+            
+            <div style="background: #f8f9fa; border-left: 4px solid #27ae60; padding: 2rem; border-radius: 8px; text-align: left; max-width: 600px; margin: 2rem auto;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">📧 What Happens Next?</h3>
+                <ol style="color: #555; line-height: 2;">
+                    <li>You will receive a payment confirmation email from Gumroad</li>
+                    <li>Your download link(s) are included in that email</li>
+                    <li>Download links are valid for unlimited downloads</li>
+                    <li>Check your spam folder if you don't see the email</li>
+                </ol>
+            </div>
+
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.5rem; border-radius: 8px; text-align: left; max-width: 600px; margin: 2rem auto;">
+                <h3 style="color: #856404; margin-bottom: 0.5rem;">💡 Tip</h3>
+                <p style="color: #856404; margin: 0;">Save your download links! We recommend downloading your e-books immediately and backing them up to your preferred cloud storage.</p>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="shop.html" class="btn" style="margin-right: 1rem;">Continue Shopping</a>
+                <a href="index.html" class="btn" style="background: #95a5a6;">Return Home</a>
+            </div>
+        </div>
+
+        <div style="max-width: 800px; margin: 3rem auto;">
+            <h3 style="text-align: center; color: #2c3e50; margin-bottom: 2rem;">Need Help?</h3>
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
+                    <h4>Email Support</h4>
+                    <p style="font-size: 0.9rem;">support@scripturesource.org</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">❓</div>
+                    <h4>FAQ</h4>
+                    <p style="font-size: 0.9rem;">Common questions answered</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
+                    <h4>Contact Us</h4>
+                    <p style="font-size: 0.9rem;">Get in touch anytime</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Scripture Source. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Sharing God's Word through study and fellowship</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Purchase Bible study e-books and downloadable resources - instant download after payment.">
+    <title>Shop - Scripture Source</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✝ Scripture Source</h1>
+            <p class="tagline">"Thy word is a lamp unto my feet, and a light unto my path" - Psalm 119:105</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#" onclick="toggleCart()" style="position: relative;">
+                    🛒 <span id="cartCount">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItemsContainer">
+            <div class="cart-empty" id="cartEmpty">
+                <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">E-Book Shop</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Premium Bible study e-books and downloadable resources</p>
+
+        <div class="category-filter">
+            <button class="category-btn active" onclick="filterShop('all')">All Products</button>
+            <button class="category-btn" onclick="filterShop('Study Guides')">Study Guides</button>
+            <button class="category-btn" onclick="filterShop('Devotionals')">Devotionals</button>
+            <button class="category-btn" onclick="filterShop('Commentaries')">Commentaries</button>
+        </div>
+
+        <div class="card-grid" id="shopContainer">
+            <div class="card shop-item" data-category="Study Guides">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">📖</div>
+                <h3>Complete Romans Study</h3>
+                <p>Deep dive into Paul's letter to the Romans with verse-by-verse analysis, historical context, and practical applications.</p>
+                <div class="meta">PDF E-Book • 180 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$12.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('Complete Romans Study', '12.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('Complete Romans Study')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shop-item" data-category="Devotionals">
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">🙏</div>
+                <h3>40 Days of Prayer</h3>
+                <p>Transform your prayer life with this comprehensive 40-day devotional journey through biblical prayers.</p>
+                <div class="meta">PDF E-Book • 95 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$9.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('40 Days of Prayer', '9.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('40 Days of Prayer')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shop-item" data-category="Commentaries">
+                <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">📚</div>
+                <h3>Gospel of John Commentary</h3>
+                <p>Scholarly yet accessible commentary on the Gospel of John with theological insights and cross-references.</p>
+                <div class="meta">PDF E-Book • 250 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$15.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('Gospel of John Commentary', '15.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('Gospel of John Commentary')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shop-item" data-category="Study Guides">
+                <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">✍️</div>
+                <h3>Prophets of the Old Testament</h3>
+                <p>Comprehensive study of major and minor prophets with historical timelines and prophetic themes.</p>
+                <div class="meta">PDF E-Book • 220 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$14.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('Prophets of the Old Testament', '14.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('Prophets of the Old Testament')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shop-item" data-category="Devotionals">
+                <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #555; font-size: 3rem; margin-bottom: 1rem;">💝</div>
+                <h3>Fruit of the Spirit Devotional</h3>
+                <p>9-week journey exploring love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control.</p>
+                <div class="meta">PDF E-Book • 110 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$10.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('Fruit of the Spirit Devotional', '10.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('Fruit of the Spirit Devotional')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shop-item" data-category="Study Guides">
+                <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; margin-bottom: 1rem;">⛰️</div>
+                <h3>Life of Jesus Complete Study</h3>
+                <p>Follow Jesus' ministry from birth to resurrection with harmonized gospel accounts and detailed maps.</p>
+                <div class="meta">PDF E-Book • 300 pages • Instant Download</div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$17.99</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn" onclick="addToCart('Life of Jesus Complete Study', '17.99')">Add to Cart</button>
+                        <button class="btn" onclick="buyNow('Life of Jesus Complete Study')" style="background: #27ae60;">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bundle Deals Section -->
+        <h2 style="text-align: center; color: #2c3e50; margin: 4rem 0 2rem;">📦 Special Bundle Deals</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem;">Save money with our curated e-book bundles!</p>
+
+        <div class="card-grid">
+            <div class="card" style="border: 3px solid #f39c12;">
+                <div style="background: #f39c12; color: white; padding: 0.5rem; margin: -2rem -2rem 1rem -2rem; text-align: center; font-weight: bold;">⭐ SAVE 25%</div>
+                <h3>📚 Complete Study Bundle</h3>
+                <p style="margin-bottom: 1rem;">Get all 3 comprehensive study guides together and save $10!</p>
+                <ul style="color: #666; margin-bottom: 1rem; padding-left: 1.5rem;">
+                    <li>Complete Romans Study</li>
+                    <li>Prophets of the Old Testament</li>
+                    <li>Life of Jesus Complete Study</li>
+                </ul>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <span style="text-decoration: line-through; color: #999;">$45.97</span>
+                    <span style="font-size: 1.8rem; font-weight: bold; color: #27ae60; margin-left: 1rem;">$34.99</span>
+                </div>
+                <button class="btn" onclick="buyBundle('complete-study-bundle')" style="width: 100%; background: #f39c12;">Get Bundle</button>
+            </div>
+
+            <div class="card" style="border: 3px solid #e74c3c;">
+                <div style="background: #e74c3c; color: white; padding: 0.5rem; margin: -2rem -2rem 1rem -2rem; text-align: center; font-weight: bold;">⭐ SAVE 20%</div>
+                <h3>🙏 Devotional Collection</h3>
+                <p style="margin-bottom: 1rem;">Perfect for daily spiritual growth - save $5 on this bundle!</p>
+                <ul style="color: #666; margin-bottom: 1rem; padding-left: 1.5rem;">
+                    <li>40 Days of Prayer</li>
+                    <li>Fruit of the Spirit Devotional</li>
+                </ul>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <span style="text-decoration: line-through; color: #999;">$20.98</span>
+                    <span style="font-size: 1.8rem; font-weight: bold; color: #27ae60; margin-left: 1rem;">$16.99</span>
+                </div>
+                <button class="btn" onclick="buyBundle('devotional-bundle')" style="width: 100%; background: #e74c3c;">Get Bundle</button>
+            </div>
+
+            <div class="card" style="border: 3px solid #9b59b6;">
+                <div style="background: #9b59b6; color: white; padding: 0.5rem; margin: -2rem -2rem 1rem -2rem; text-align: center; font-weight: bold;">⭐ BEST VALUE - SAVE 30%</div>
+                <h3>🎁 Complete Library</h3>
+                <p style="margin-bottom: 1rem;">Get ALL 6 e-books and save $25! The ultimate Bible study collection.</p>
+                <ul style="color: #666; margin-bottom: 1rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                    <li>All Study Guides</li>
+                    <li>All Devotionals</li>
+                    <li>All Commentaries</li>
+                </ul>
+                <div style="text-align: center; margin: 1rem 0;">
+                    <span style="text-decoration: line-through; color: #999;">$82.94</span>
+                    <span style="font-size: 1.8rem; font-weight: bold; color: #27ae60; margin-left: 1rem;">$57.99</span>
+                </div>
+                <button class="btn" onclick="buyBundle('complete-library')" style="width: 100%; background: #9b59b6;">Get Bundle</button>
+            </div>
+        </div>
+
+        <!-- Limited Time Offer Countdown -->
+        <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 3rem; border-radius: 12px; margin: 4rem 0; text-align: center; box-shadow: 0 8px 20px rgba(238, 90, 111, 0.3);">
+            <div style="background: rgba(255,255,255,0.2); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 20px; margin-bottom: 1rem; font-weight: bold;">
+                ⚡ LIMITED TIME OFFER
+            </div>
+            <h2 style="color: white; margin-bottom: 1rem; font-size: 2rem;">Flash Sale: 40% Off Complete Library!</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.95;">Use code <strong style="background: rgba(255,255,255,0.3); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 1.2rem;">FLASH40</strong> at checkout</p>
+            
+            <div style="background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 12px; max-width: 600px; margin: 0 auto;">
+                <p style="margin-bottom: 1rem; font-size: 0.9rem; opacity: 0.9;">⏰ Offer ends in:</p>
+                <div id="countdown" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <div style="background: white; color: #ee5a6f; padding: 1.5rem; border-radius: 8px; min-width: 100px;">
+                        <div id="days" style="font-size: 2.5rem; font-weight: bold;">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">Days</div>
+                    </div>
+                    <div style="background: white; color: #ee5a6f; padding: 1.5rem; border-radius: 8px; min-width: 100px;">
+                        <div id="hours" style="font-size: 2.5rem; font-weight: bold;">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">Hours</div>
+                    </div>
+                    <div style="background: white; color: #ee5a6f; padding: 1.5rem; border-radius: 8px; min-width: 100px;">
+                        <div id="minutes" style="font-size: 2.5rem; font-weight: bold;">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">Minutes</div>
+                    </div>
+                    <div style="background: white; color: #ee5a6f; padding: 1.5rem; border-radius: 8px; min-width: 100px;">
+                        <div id="seconds" style="font-size: 2.5rem; font-weight: bold;">00</div>
+                        <div style="font-size: 0.9rem; opacity: 0.7;">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn" onclick="buyBundle('complete-library')" style="margin-top: 2rem; background: white; color: #ee5a6f; font-size: 1.2rem; padding: 1rem 3rem; font-weight: bold;">
+                🎁 Claim This Deal Now!
+            </button>
+        </div>
+
+        <!-- Discount Code Section -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem; border-radius: 12px; margin: 4rem 0; text-align: center;">
+            <h2 style="color: white; margin-bottom: 1rem;">💎 Have a Discount Code?</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;">Enter your code at checkout on Gumroad to receive your discount!</p>
+            <div style="background: white; padding: 2rem; border-radius: 8px; max-width: 500px; margin: 0 auto;">
+                <p style="color: #2c3e50; font-weight: bold; margin-bottom: 1rem;">Active Promotions:</p>
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin-bottom: 0.5rem; color: #2c3e50; text-align: left;">
+                    <strong>WELCOME10</strong> - 10% off your first purchase
+                </div>
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin-bottom: 0.5rem; color: #2c3e50; text-align: left;">
+                    <strong>FAITHFUL20</strong> - 20% off orders over $30
+                </div>
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px; color: #2c3e50; text-align: left;">
+                    <strong>BLESS25</strong> - 25% off complete library bundle
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Testimonials -->
+        <h2 style="text-align: center; color: #2c3e50; margin: 4rem 0 2rem;">⭐ What Our Readers Say</h2>
+        
+        <div class="card-grid" style="margin-bottom: 4rem;">
+            <div class="card" style="background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);">
+                <div style="color: #f39c12; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+                <p style="font-style: italic; color: #555; margin-bottom: 1rem;">"The Complete Romans Study transformed my understanding of Paul's letter. The depth of research and practical applications made it come alive for me!"</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">SM</div>
+                    <div>
+                        <div style="font-weight: bold; color: #2c3e50;">Sarah Mitchell</div>
+                        <div style="font-size: 0.9rem; color: #999;">Bible Study Leader</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);">
+                <div style="color: #f39c12; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+                <p style="font-style: italic; color: #555; margin-bottom: 1rem;">"I've used the 40 Days of Prayer devotional three times now. Each time I discover something new and draw closer to God. Highly recommend!"</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">JC</div>
+                    <div>
+                        <div style="font-weight: bold; color: #2c3e50;">James Chen</div>
+                        <div style="font-size: 0.9rem; color: #999;">Pastor</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);">
+                <div style="color: #f39c12; font-size: 1.5rem; margin-bottom: 1rem;">★★★★★</div>
+                <p style="font-style: italic; color: #555; margin-bottom: 1rem;">"Bought the Complete Library bundle - best investment in my spiritual growth! The quality and depth is outstanding across all the materials."</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">DK</div>
+                    <div>
+                        <div style="font-weight: bold; color: #2c3e50;">David Kim</div>
+                        <div style="font-size: 0.9rem; color: #999;">Small Group Leader</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; padding: 4rem 2rem; border-radius: 12px; margin: 4rem 0; text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">📬</div>
+            <h2 style="color: white; margin-bottom: 1rem;">Join Our Newsletter</h2>
+            <p style="margin-bottom: 0.5rem; font-size: 1.1rem;">Get weekly Bible study tips, new releases, and exclusive discounts</p>
+            <p style="margin-bottom: 2rem; font-size: 1.3rem; font-weight: bold;">Plus get <span style="background: #27ae60; padding: 0.3rem 0.8rem; border-radius: 4px;">15% OFF</span> your first purchase!</p>
+            
+            <div style="max-width: 500px; margin: 0 auto;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address" style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border: none; border-radius: 50px; font-size: 1rem;">
+                    <button class="btn" onclick="subscribeNewsletter()" style="background: #27ae60; padding: 1rem 2rem; white-space: nowrap;">Subscribe Now</button>
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.8;">✅ Free weekly content • 📧 Exclusive offers • 🔒 Unsubscribe anytime</p>
+            </div>
+
+            <div id="newsletterSuccess" style="display: none; background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎉</div>
+                <h3 style="color: white; margin-bottom: 0.5rem;">Welcome to the Family!</h3>
+                <p style="margin-bottom: 1rem;">Check your email for your exclusive 15% discount code:</p>
+                <div style="background: white; color: #2c3e50; padding: 1rem; border-radius: 6px; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px;">
+                    NEWSLETTER15
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.9;">Use this code at checkout for 15% off any purchase!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Scripture Source. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Sharing God's Word through study and fellowship</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
