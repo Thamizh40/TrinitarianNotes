@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bible study articles covering Old Testament, New Testament, and devotional topics.">
-    <title>Articles - Scripture Source</title>
+    <meta name="description" content="Trinitarian Notes - Your source for biblical truth. Bible study articles, e-books, and resources.">
+    <meta name="keywords" content="Bible study, Christian resources, devotional, scripture, e-books">
+    <title>Trinitarian Notes - Your Source for Biblical Truth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>✝ Scripture Source</h1>
-            <p class="tagline">"Thy word is a lamp unto my feet, and a light unto my path" - Psalm 119:105</p>
-        </div>
-    </header>
+        
+    <div class="logo-container">
+        <span class="logo-main">Trinitarian </span><span class="logo-accent">Notes</span>
+    </div>
+</header>
+    
+
 
     <nav>
         <div class="container">
@@ -21,36 +25,16 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="articles.html" class="active">Articles</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="#" onclick="toggleCart()" style="position: relative;">
-                    🛒 <span id="cartCount">0</span>
-                </a></li>
+                <li><a href="donate.html">Support</a></li>
+
+            
             </ul>
         </div>
     </nav>
 
-    <!-- Shopping Cart Sidebar (same as index.html) -->
-    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h2>Shopping Cart</h2>
-            <button class="cart-close" onclick="toggleCart()">✕</button>
-        </div>
-        <div class="cart-items" id="cartItemsContainer">
-            <div class="cart-empty" id="cartEmpty">
-                <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
-                <p>Your cart is empty</p>
-            </div>
-        </div>
-        <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="checkout()">Proceed to Checkout</button>
-        </div>
-    </div>
+    
 
     <main class="container">
         <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">Bible Study Articles</h2>
@@ -64,20 +48,28 @@
             <button class="category-btn" onclick="filterByCategory('Old Testament')">Old Testament</button>
             <button class="category-btn" onclick="filterByCategory('New Testament')">New Testament</button>
             <button class="category-btn" onclick="filterByCategory('Devotional')">Devotional</button>
+            <button class="category-btn" onclick="filterByCategory('Affirmations')">Affirmations</button>
+            <button class="category-btn" onclick="filterByCategory('Prayers')">Prayers</button>
         </div>
 
         <div class="card-grid" id="articlesContainer">
+            <div class="card article-card" data-category="Affirmations">
+                <div class="meta">Affirmations • 2 min read</div>
+                <h3>The Mirror of My Original Design</h3>
+                <p>Affirming the Finished Work in Christ.(Ephesians 1)</p>
+               <a href="my-original-design-affirmations.html" class="btn">Read More</a>
+            </div>
             <div class="card article-card" data-category="New Testament">
                 <div class="meta">New Testament • 5 min read</div>
-                <h3>The Sermon on the Mount: A Deeper Look</h3>
-                <p>Explore the profound teachings of Jesus in Matthew 5-7 and discover how these principles apply to modern Christian living.</p>
-                <a href="#" class="btn">Read More</a>
+                <h3>The Unveiled Reality</h3>
+                <p>An Exploration of Ephesians 1 and Our Unconditional Inclusion in Christ</p>
+               <a href="unveiled-reality.html" class="btn">Read More</a>
             </div>
-            <div class="card article-card" data-category="Old Testament">
-                <div class="meta">Old Testament • 8 min read</div>
-                <h3>Understanding the Psalms: Poetry of Praise</h3>
-                <p>A comprehensive study of the structure, themes, and spiritual significance of the book of Psalms.</p>
-                <a href="#" class="btn">Read More</a>
+            <div class="card article-card" data-category="Prayers">
+                <div class="meta">Prayers • 2 min read</div>
+                <h3>The Master Plan Unfolded</h3>
+                <p>A Meditative Prayer - Ephesians 1</p>
+                <a href="Master-Plan-Unfolded-prayer.html" class="btn">Read More</a>
             </div>
             <div class="card article-card" data-category="Devotional">
                 <div class="meta">Devotional • 3 min read</div>
