@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblical illustrations, artwork, and visual teaching aids for Bible study.">
+    <title>Gallery - Scripture Source</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <div class="viewer-container">
+        <nav class="viewer-nav">
+            <a href="gallery.html" class="back-link">← Back to Gallery</a>
+           
+        </nav>
+
+        <div class="illustration-display">
+            <h1 id="art-title">Illustration</h1>
+            <img id="main-image" src="" alt="Loading Illustration...">
+            
+            <div class="art-description">
+                <p>This illustration is part of the Scripture Source collection. You are free to use it for personal study or meditation.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const imageSrc = urlParams.get('img');
+        const imageTitle = urlParams.get('title');
+
+        if (imageSrc) {
+            document.getElementById('main-image').src = imageSrc;
+        }
+        if (imageTitle) {
+            document.getElementById('art-title').innerText = imageTitle;
+        }
+    </script>
+</body>
+</html>
