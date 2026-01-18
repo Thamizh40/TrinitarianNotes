@@ -1,4 +1,5 @@
 /* CSS FILE - style.css */
+/* CSS FILE - style.css */
 /* Save this as: css/style.css */
 
 * {
@@ -10,8 +11,8 @@
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333333;
+    background-color: #ECFCCA;
 }
 
 .container {
@@ -22,32 +23,51 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
-    padding: 2rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: #000000; /* Solid Black */
+    padding: 2.5rem 0;
+    text-align: center;
+    border-bottom: 2px solid #D4AF37; /* The Gold Line */
 }
 
-h1 {
+.logo-container {
+    font-family: 'serif'; /* Or 'Playfair Display' if you use Google Fonts */
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    letter-spacing: 1px;
 }
 
-.tagline {
-    text-align: center;
-    font-style: italic;
-    opacity: 0.9;
+.logo-main {
+    color: #ffffff;      /* Pure White */
+    font-weight: 300;    /* Light/Thin for an elegant look */
+}
+
+.logo-accent {
+    color: #D4AF37;      /* Gold */
+    font-weight: 700;    /* Bold to make the 'Notes' pop */
+    margin-left: 2px;
 }
 
 /* Navigation */
 nav {
-    background: #34495e;
+    background: #000000;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* This gold line creates the separation from the black header */
+    border-top: 1px solid #D4AF37; 
+    border-bottom: 1px solid #D4AF37;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+nav a {
+    color: #ffffff; /* Crisp white text */
+   text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #D4AF37; /* Fades to gold */
 }
 
 nav ul {
@@ -60,31 +80,17 @@ nav ul {
 nav li {
     margin: 0 1.5rem;
 }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+nav a.active {
+    background: #F7FEE7; /* Solid Gold */
+    color: #000000;      /* Black text for high contrast on gold */
+    border-radius: 4px;  /* Slightly rounded corners */
+    font-weight: bold;
 }
 
-nav a:hover, nav a.active {
-    background: rgba(52, 152, 219, 0.3);
-    color: #3498db;
-}
 
-#cartCount {
-    background: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
-    font-size: 0.8rem;
-    position: absolute;
-    top: -5px;
-    right: -10px;
-}
+
+
+
 
 /* Main Content */
 main {
@@ -154,21 +160,26 @@ main {
 }
 
 /* Buttons */
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #3498db;
-    color: white;
+    /* Theme Change: Gold background with Black text */
+    background: #000000; 
+    color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 600;
 }
 
 .btn:hover {
-    background: #2980b9;
+    /* Subtle darken or glow on hover */
+    background: #C4A02A; 
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 /* Search Bar */
@@ -181,15 +192,19 @@ main {
     padding: 0.75rem 1.5rem;
     width: 100%;
     max-width: 500px;
+    /* Theme Change: Neutral border */
     border: 2px solid #ddd;
     border-radius: 50px;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
 }
 
 .search-bar input:focus {
     outline: none;
-    border-color: #3498db;
+    /* Theme Change: Gold border and subtle glow on focus */
+    border-color: #D4AF37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
 }
 
 /* Category Filter */
@@ -201,16 +216,16 @@ main {
 .category-btn {
     padding: 0.5rem 1rem;
     margin: 0.5rem;
-    background: white;
-    border: 2px solid #3498db;
-    color: #3498db;
-    border-radius: 20px;
+    background: #FFF085;
+    border: 0.2px solid #8692A7;
+    color: #000000;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .category-btn:hover, .category-btn.active {
-    background: #3498db;
+    background: #8692A7;
     color: white;
 }
 
@@ -243,6 +258,7 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    align-items: stretch; /* Ensures all boxes in a row are the same height */
 }
 
 .gallery-item {
@@ -251,10 +267,15 @@ main {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    text-decoration: none; /* Removes link underline */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Important for equal height */
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .gallery-img {
@@ -273,109 +294,256 @@ main {
     text-align: center;
 }
 
-/* Shopping Cart Sidebar */
-.cart-sidebar {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 400px;
-    height: 100vh;
-    background: white;
-    box-shadow: -4px 0 8px rgba(0,0,0,0.2);
-    transition: right 0.3s;
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-.cart-sidebar.open {
-    right: 0;
-}
-
-.cart-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* The actual small preview image */
+.gallery-img img {
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 999;
+    object-fit: cover; /* This makes the image fill the box without stretching */
+    transition: transform 0.5s ease;
 }
 
-.cart-overlay.active {
-    display: block;
+.gallery-item:hover .gallery-img img {
+    transform: scale(1.1); /* Subtle zoom effect on hover */
 }
 
-.cart-header {
-    background: #2c3e50;
-    color: white;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cart-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.cart-items {
-    padding: 1rem;
-}
-
-.cart-item {
-    border-bottom: 1px solid #eee;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cart-item-info h4 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-}
-
-.cart-item-price {
-    font-weight: bold;
-    color: #27ae60;
-}
-
-.cart-item-remove {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.cart-footer {
-    position: sticky;
-    bottom: 0;
-    background: white;
-    padding: 1.5rem;
-    border-top: 2px solid #eee;
-}
-
-.cart-total {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.cart-empty {
+/* Caption spacing to prevent overlap */
+.gallery-caption {
+    padding: 1.2rem;
     text-align: center;
-    padding: 3rem 1rem;
-    color: #999;
+    flex-grow: 1; /* Pushes content to fill the box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
 }
+
+.gallery-caption h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.gallery-caption p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* --- Article Page Styles --- */
+
+/* This class will wrap your article content */
+.reading-layout {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    font-family: 'Georgia', serif; /* Better for long reading */
+    line-height: 1.8;
+    color: #192E03;
+}
+
+.reading-layout h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #D8F999;
+}
+
+.article-meta {
+    font-style: italic;
+    color: #D8F999;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.reading-layout p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+}
+
+.article-header {
+ color: #D8F999;
+}
+
+/* --- Illustration Viewer Styles --- */
+
+.viewer-body {
+    background-color: #f4f4f4; /* Subtle grey background to make art pop */
+    margin: 0;
+}
+
+.viewer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.viewer-nav {
+    /* Reduce vertical padding (top and bottom) */
+    padding: 0.5rem 0; 
+    
+    /* Ensure no extra height from background or borders */
+    background: #000000;
+    border-bottom: 1px solid #D4AF37; 
+    
+    /* Flexbox helps keep items centered vertically in a small space */
+    display: flex;
+    align-items: center;
+    min-height: auto; 
+}
+.viewer-nav .back-link {
+    font-size: 0.9rem; /* Slightly smaller text for a more compact bar */
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.illustration-display {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.illustration-display h1 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.illustration-display img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.art-description {
+    margin-top: 40px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.print-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.print-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* --- Donate Page Styles --- */
+
+.donate-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    font-family: 'Inter', -apple-system, sans-serif;
+    text-align: center;
+}
+
+.donate-header {
+    margin-bottom: 60px;
+}
+
+.donate-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.donate-header p {
+    font-size: 1.2rem;
+    color: #F7FEE7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* The Grid Layout */
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Individual Cards */
+.donate-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.donate-card.featured {
+    border: 2px solid #000; /* Makes the middle option stand out */
+}
+
+.donate-card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.donate-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.btn-donate {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-donate:hover {
+    background-color: #333;
+}
+
+.back-home {
+    text-decoration: none;
+    color: #888;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Donate Section at the bottom */
+.donate-box {
+    margin-top: 50px;
+    padding: 30px;
+    background: #314115;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px dashed #d4af37;
+}
+
+
+
 
 /* Share Section */
 .share-section {
@@ -418,7 +586,7 @@ main {
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: #0E6632;
     color: white;
     text-align: center;
     padding: 2rem 0;
