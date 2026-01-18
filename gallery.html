@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Biblical illustrations, artwork, and visual teaching aids for Bible study.">
-    <title>Gallery - Scripture Source</title>
+    <meta name="description" content="Trinitarian Notes - Your source for biblical truth. Bible study articles, e-books, and resources.">
+    <meta name="keywords" content="Bible study, Christian resources, devotional, scripture, e-books">
+    <title>Trinitarian Notes - Your Source for Biblical Truth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>✝ Scripture Source</h1>
-            <p class="tagline">"Thy word is a lamp unto my feet, and a light unto my path" - Psalm 119:105</p>
-        </div>
-    </header>
+        
+    <div class="logo-container">
+        <span class="logo-main">Trinitarian </span><span class="logo-accent">Notes</span>
+    </div>
+</header>
+    
 
     <nav>
         <div class="container">
@@ -21,106 +24,42 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="articles.html">Articles</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                
                 <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="#" onclick="toggleCart()" style="position: relative;">
-                    🛒 <span id="cartCount">0</span>
-                </a></li>
+                <li><a href="donate.html">Support</a></li>
+                
             </ul>
         </div>
     </nav>
 
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h2>Shopping Cart</h2>
-            <button class="cart-close" onclick="toggleCart()">✕</button>
-        </div>
-        <div class="cart-items" id="cartItemsContainer">
-            <div class="cart-empty" id="cartEmpty">
-                <p style="font-size: 3rem; margin-bottom: 1rem;">🛒</p>
-                <p>Your cart is empty</p>
-            </div>
-        </div>
-        <div class="cart-footer" id="cartFooter" style="display: none;">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
-            </div>
-            <button class="btn" style="width: 100%; padding: 1rem; font-size: 1.1rem;" onclick="checkout()">Proceed to Checkout</button>
-        </div>
-    </div>
+    
 
     <main class="container">
         <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">Biblical Illustrations & Art</h2>
         <p style="text-align: center; color: #666; margin-bottom: 2rem;">Visual resources for teaching and inspiration</p>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <div class="gallery-img">🕊️</div>
-                <div class="gallery-caption">
-                    <h3>The Holy Spirit</h3>
-                    <p>Symbolic representation</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">⛰️</div>
-                <div class="gallery-caption">
-                    <h3>Sermon on the Mount</h3>
-                    <p>Jesus teaching the multitudes</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">🌊</div>
-                <div class="gallery-caption">
-                    <h3>Red Sea Crossing</h3>
-                    <p>Exodus miracle illustration</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">✨</div>
-                <div class="gallery-caption">
-                    <h3>Creation Story</h3>
-                    <p>Genesis 1 visual timeline</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">🐑</div>
-                <div class="gallery-caption">
-                    <h3>The Good Shepherd</h3>
-                    <p>Psalm 23 artwork</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">✝️</div>
-                <div class="gallery-caption">
-                    <h3>The Cross</h3>
-                    <p>Symbols of salvation</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">🌟</div>
-                <div class="gallery-caption">
-                    <h3>Star of Bethlehem</h3>
-                    <p>Nativity scene element</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">📜</div>
-                <div class="gallery-caption">
-                    <h3>Ancient Scrolls</h3>
-                    <p>Scripture preservation</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <div class="gallery-img">🕯️</div>
-                <div class="gallery-caption">
-                    <h3>Light of the World</h3>
-                    <p>John 8:12 illustration</p>
-                </div>
-            </div>
+       <div class="gallery-grid">
+    <a href="view-illustration.html?img=images/unnamed.png&title=The+Holy+Spirit" class="gallery-item">
+        <div class="gallery-img">
+            <img src="images/unnamed.png" alt="The Holy Spirit Illustration">
         </div>
+        <div class="gallery-caption">
+            <h3>The Holy Spirit</h3>
+            <p>Symbolic representation</p>
+        </div>
+    </a>
+
+    <a href="view-illustration.html?img=images/mount.jpg&title=Sermon+on+the+Mount" class="gallery-item">
+        <div class="gallery-img">
+            <img src="images/mount.jpg" alt="Sermon on the Mount">
+        </div>
+        <div class="gallery-caption">
+            <h3>Sermon on the Mount</h3>
+            <p>Jesus teaching the multitudes</p>
+        </div>
+    </a>
+
+    </div>
     </main>
 
     <footer>
